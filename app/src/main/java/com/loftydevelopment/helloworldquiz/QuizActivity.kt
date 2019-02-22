@@ -15,6 +15,7 @@ class QuizActivity : AppCompatActivity() {
     var score = 0
     var numberOfQuestions = 0
     var languageList:ArrayList<Language> = ArrayList()
+    var lastQuestion:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +46,14 @@ class QuizActivity : AppCompatActivity() {
 
         var rand: Random = Random()
 
-        val questionIndex = rand.nextInt(languageList.size)
+        var questionIndex = rand.nextInt(languageList.size)
+
+        //Check that question is not repeating twice in a row
+        while(languageList[questionIndex].name.equals(lastQuestion)){
+            questionIndex = rand.nextInt(languageList.size)
+        }
+
+        lastQuestion = languageList[questionIndex].name
 
         tvTestMath.text = languageList[questionIndex].name   //TODO old, using just for testing to see correct answer
         ivLanguageImg.setImageResource(this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName))
