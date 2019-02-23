@@ -5,14 +5,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity" android:background="@drawable/background_light_blue">
     <Button
             android:text="Start Quiz"
             android:layout_height="wrap_content" android:id="@+id/btStartQuiz" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:onClick="startQuiz" android:layout_width="200dp"/>
+            app:layout_constraintBottom_toBottomOf="parent" android:onClick="startQuiz" android:layout_width="200dp"
+
+    />
     <Button
             android:text="Top Scores"
             android:layout_height="wrap_content" android:id="@+id/btScoreMenu" android:layout_marginTop="8dp"
