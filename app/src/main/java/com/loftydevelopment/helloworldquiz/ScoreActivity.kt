@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 
 import kotlinx.android.synthetic.main.activity_score.*
 import kotlinx.android.synthetic.main.fragment_score.view.*
@@ -95,12 +96,21 @@ class ScoreActivity : AppCompatActivity() {
      */
     class PlaceholderFragment : Fragment() {
 
+        private val array = arrayListOf<String>()
+
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
+            array.clear()
+            for (i in 0..10) {
+                array.add(getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER)))
+            }
             val rootView = inflater.inflate(R.layout.fragment_score, container, false)
-            rootView.section_label.text = getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER))
+            val lv = rootView.findViewById(R.id.section_list) as ListView
+            lv.adapter = ListAdapter(context!!, array)
+
+            //rootView.section_label.text = getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER))
             return rootView
         }
 
