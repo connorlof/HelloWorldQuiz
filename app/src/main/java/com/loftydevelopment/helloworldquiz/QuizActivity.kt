@@ -10,11 +10,9 @@ import java.util.*
 import android.view.ScaleGestureDetector
 import android.widget.ImageView
 import android.view.MotionEvent
-
-
-
-
-
+import android.R.attr.scheme
+import android.R.attr.path
+import android.net.Uri
 
 
 class QuizActivity : AppCompatActivity() {
@@ -26,18 +24,15 @@ class QuizActivity : AppCompatActivity() {
     var languageList:ArrayList<Language> = ArrayList()
     var lastQuestion:String = ""
 
-    var mScaleGestureDetector: ScaleGestureDetector? = null
-    var mScaleFactor = 1.0f
     var mImageView: ImageView? = null
-
+    var pinchZoomPan: PinchZoomPan? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        mImageView = findViewById(R.id.ivLanguageImg)
-        mScaleGestureDetector = ScaleGestureDetector(this, ScaleListener())
-        ScaleListener()
+        pinchZoomPan = findViewById(R.id.ivLanguageImg)
+
 
         play(findViewById(R.id.btAnswer0))
 
@@ -45,14 +40,6 @@ class QuizActivity : AppCompatActivity() {
 
 
 
-
-    override fun onTouchEvent(motionEvent: MotionEvent): Boolean {
-
-        mScaleGestureDetector!!.onTouchEvent(motionEvent)
-
-        return true
-
-    }
 
     fun chooseAnswer(view: View){
 
@@ -85,7 +72,11 @@ class QuizActivity : AppCompatActivity() {
         lastQuestion = languageList[questionIndex].name
 
         tvTestMath.text = languageList[questionIndex].name   //TODO old, using just for testing to see correct answer
-        ivLanguageImg.setImageResource(this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName))
+
+        val img:Int = this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName)
+        val uri = Uri.parse("android.resource://$packageName/drawable/$img")
+        //ivLanguageImg.setImageResource(this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName))
+        ivLanguageImg.loadImageOnCanvas(uri)
 
         locationOfCorrectAnswer = rand.nextInt(4)
 
@@ -146,26 +137,6 @@ class QuizActivity : AppCompatActivity() {
         timer.start()
     }
 
-    private inner class ScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener() {
-
-        override fun onScale(scaleGestureDetector: ScaleGestureDetector): Boolean {
-
-            mScaleFactor *= scaleGestureDetector.scaleFactor
-
-            mScaleFactor = Math.max(
-                0.5f,
-
-                Math.min(mScaleFactor, 2.0f)
-            )
-
-            mImageView!!.scaleX = mScaleFactor
-
-            mImageView!!.scaleY = mScaleFactor
-
-            return true
-
-        }
-    }
     fun initLanguageObjs():ArrayList<Language>{
 
         val langList:ArrayList<Language> = ArrayList()
