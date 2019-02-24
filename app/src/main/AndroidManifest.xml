@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.loftydevelopment.helloworldquiz">
-
-    <!-- the below line of code is used by the Google Play Store to filter the app from devices that do not meet the hardware/software requirement
-    see '<uses-feature>' documentation. Likely not necessary but is considered good practice-->
-    <uses-feature android:name="android.hardware.screen.portrait"/>
-
     <!--
-                android:screenOrientation="portrait"
-                locks activity it is contained in to specified mode.
-                Other options:
-                1. "nosensor": locks the orientation to the devices preferred mode
-                    e.g. portrait for phone and landscape for tablets
-
-                2. "sensorPortrait": locks the orientation to portrait, but allows 180 degree rotation (upside down)
-
-                android:configChanges="keyboardHidden"
-                keeps program from changing mode when keyboard is called.
-
-
-               -->
+     the below line of code is used by the Google Play Store to filter the app from devices that do not meet the hardware/software requirement
+    see '<uses-feature>' documentation. Likely not necessary but is considered good practice
+    -->
+    <uses-feature android:name="android.hardware.screen.portrait"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
             android:allowBackup="true"
@@ -28,24 +15,31 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".SignUpActivity">
+        </activity>
+        <activity android:name=".LoginActvity">
+        </activity>
         <activity
                 android:name=".ScoreActivity"
+                android:configChanges="keyboardHidden"
                 android:label="@string/title_activity_score"
-                android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait"
-                android:configChanges="keyboardHidden">
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".EndQuizActivity"
-                  android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden">
+        <activity
+                android:name=".EndQuizActivity"
+                android:configChanges="keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".QuizActivity"
-                  android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden">
+        <activity
+                android:name=".QuizActivity"
+                android:configChanges="keyboardHidden"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".MainActivity"
-                  android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden">
+        <activity
+                android:name=".MainActivity"
+                android:configChanges="keyboardHidden"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
