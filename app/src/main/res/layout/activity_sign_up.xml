@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/btSignUp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordConfirm" android:onClick="loginListener"/>
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordConfirm" android:onClick="signUpListener"/>
 
 
     <ProgressBar
@@ -50,7 +50,7 @@
             android:id="@+id/progressBar"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/tvLoginLink"
-            app:layout_constraintStart_toEndOf="@+id/btSignUp"/>
+            app:layout_constraintStart_toEndOf="@+id/btSignUp" android:visibility="gone"/>
 
     <TextView
             android:text="Already have an account? Log In Here"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/tvLoginLink" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btSignUp" android:onClick="signUpListener"
+            app:layout_constraintTop_toBottomOf="@+id/btSignUp" android:onClick="loginListener"
             android:textSize="18sp"/>
 
 </android.support.constraint.ConstraintLayout>

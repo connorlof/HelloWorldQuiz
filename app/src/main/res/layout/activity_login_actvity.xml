@@ -40,7 +40,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/progressBar"
             app:layout_constraintStart_toEndOf="@+id/btLogin" android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/tvSignUpLink"/>
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/tvSignUpLink"
+            android:visibility="gone"/>
 
     <TextView
             android:text="Don't have an account? Sign Up Here"
