@@ -44,6 +44,7 @@ class LoginActvity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
 
                 if (task.isSuccessful) {
+                    Toast.makeText(this, "Login successful", Toast.LENGTH_LONG).show()
                     finish()
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
