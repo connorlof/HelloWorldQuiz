@@ -15,7 +15,7 @@ import android.widget.Toast
 
 import java.io.IOException
 
-class PinchZoomPan(context: Context, attrs: AttributeSet?) : View(context, attrs) {
+class PanZoomView(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
     private var mBitmap: Bitmap? = null
     private var mImageWidth: Int = 0

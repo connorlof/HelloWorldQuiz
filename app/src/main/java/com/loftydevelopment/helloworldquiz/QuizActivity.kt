@@ -7,11 +7,7 @@ import android.os.CountDownTimer
 import android.view.View
 import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
-import android.view.ScaleGestureDetector
 import android.widget.ImageView
-import android.view.MotionEvent
-import android.R.attr.scheme
-import android.R.attr.path
 import android.net.Uri
 
 
@@ -25,13 +21,13 @@ class QuizActivity : AppCompatActivity() {
     var lastQuestion:String = ""
 
     var mImageView: ImageView? = null
-    var pinchZoomPan: PinchZoomPan? = null
+    var panZoomView: PanZoomView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        pinchZoomPan = findViewById(R.id.ivLanguageImg)
+        panZoomView = findViewById(R.id.ivLanguageImg)
 
 
         play(findViewById(R.id.btAnswer0))
