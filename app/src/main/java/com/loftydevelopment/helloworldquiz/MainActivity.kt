@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         when (item!!.itemId){
             R.id.menuOptions -> {
-                Toast.makeText(this, "Options selected", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, OptionsActivity::class.java))
             }
             R.id.menuLogin -> {
                 startActivity(Intent(this, LoginActvity::class.java))

@@ -6,6 +6,7 @@
     see '<uses-feature>' documentation. Likely not necessary but is considered good practice
     -->
     <uses-feature android:name="android.hardware.screen.portrait"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -15,6 +16,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".OptionsActivity">
+        </activity>
         <activity android:name=".SignUpActivity">
         </activity>
         <activity android:name=".LoginActvity">
