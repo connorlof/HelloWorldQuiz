@@ -65,6 +65,9 @@ class MainActivity : AppCompatActivity() {
             R.id.menuLogin -> {
                 startActivity(Intent(this, LoginActvity::class.java))
             }
+            R.id.menuSignUp -> {
+                startActivity(Intent(this, SignUpActivity::class.java))
+            }
             R.id.menuLogout -> {
                 Toast.makeText(this, "Logout selected", Toast.LENGTH_SHORT).show()
                 FirebaseAuth.getInstance().signOut()

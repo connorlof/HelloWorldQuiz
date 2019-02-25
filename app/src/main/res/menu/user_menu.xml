@@ -12,6 +12,11 @@
     />
 
     <item
+            android:title="Sign Up"
+            android:id="@+id/menuSignUp"
+    />
+
+    <item
             android:title="Logout"
             android:id="@+id/menuLogout"
     />
