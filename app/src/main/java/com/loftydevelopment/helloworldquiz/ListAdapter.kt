@@ -40,16 +40,22 @@ class ListAdapter(context: Context, arrayList: ArrayList<String>) : BaseAdapter(
             vh = view.tag as ListRowHolder
         }
 
-        vh.label.text = sList[position]
+        vh.label_name.text = sList[position]
+        vh.label_place.text = sList[position]
+        vh.label_score.text = sList[position]
         return view
     }
 }
 
 private class ListRowHolder(row: View?) {
-    public val label: TextView
+    public val label_name: TextView
+    public val label_place: TextView
+    public val label_score: TextView
 
     init {
-        this.label = row?.findViewById(R.id.section_label) as TextView
+        this.label_name = row?.findViewById(R.id.textView_name) as TextView
+        this.label_score = row?.findViewById(R.id.textView_score) as TextView
+        this.label_place = row?.findViewById(R.id.textView_rank) as TextView
     }
 
 }
