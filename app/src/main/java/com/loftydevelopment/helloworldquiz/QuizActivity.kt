@@ -1,14 +1,17 @@
 package com.loftydevelopment.helloworldquiz
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import android.content.SharedPreferences
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.preference.PreferenceManager
+import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
-import android.widget.ImageView
-import android.net.Uri
 
 
 class QuizActivity : AppCompatActivity() {
@@ -20,12 +23,25 @@ class QuizActivity : AppCompatActivity() {
     var languageList:ArrayList<Language> = ArrayList()
     var lastQuestion:String = ""
 
+    var sharedPref:SharedPreferences? = null
+    var checked: Boolean? = null
     var mImageView: ImageView? = null
     var panZoomView: PanZoomView? = null
+
+    var mpCorrect:MediaPlayer? = null
+    var mpWrong:MediaPlayer? = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
+
+        mpCorrect = MediaPlayer.create(this, R.raw.sound_correct)
+        mpWrong = MediaPlayer.create(this, R.raw.sound_wrong)
+
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        checked = sharedPref!!.getBoolean("checked", false)
 
         panZoomView = findViewById(R.id.ivLanguageImg)
 
@@ -41,8 +57,14 @@ class QuizActivity : AppCompatActivity() {
 
         if(view.getTag().toString().equals(locationOfCorrectAnswer.toString())){
             score++
+            if(checked!!) {
+                mpCorrect!!.start()
+            }
             tvResult.text = "Correct!"
         }else{
+            if(checked!!) {
+                mpWrong!!.start()
+            }
             tvResult.text = "Wrong!"
         }
 
