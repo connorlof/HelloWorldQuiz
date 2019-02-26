@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
 
 
+
 class QuizActivity : AppCompatActivity() {
 
     var answers:ArrayList<String> = ArrayList()
