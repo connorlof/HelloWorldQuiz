@@ -1,8 +1,8 @@
 package com.loftydevelopment.helloworldquiz
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        invalidateOptionsMenu()
 
         if(mAuth!!.currentUser != null){
             tvLoginStatus.text = "Logged In: Yes"
@@ -52,6 +54,21 @@ class MainActivity : AppCompatActivity() {
 
         var inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.user_menu, menu)
+
+        var menuItemLogin: MenuItem = menu!!.findItem(R.id.menuLogin)
+        var menuItemLogout: MenuItem = menu.findItem(R.id.menuLogout)
+        var menuItemSignUp: MenuItem = menu.findItem(R.id.menuSignUp)
+
+        if(mAuth!!.currentUser != null){
+            menuItemLogin.isVisible = false
+            menuItemSignUp.isVisible = false
+            menuItemLogout.isVisible = true
+        }else{
+            menuItemLogin.isVisible = true
+            menuItemSignUp.isVisible = true
+            menuItemLogout.isVisible = false
+        }
+
 
         return true
     }
