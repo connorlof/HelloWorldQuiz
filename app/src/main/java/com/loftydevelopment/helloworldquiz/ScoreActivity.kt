@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_score.*
+import java.util.ArrayList
 
 class ScoreActivity : AppCompatActivity() {
 
@@ -50,7 +51,7 @@ class ScoreActivity : AppCompatActivity() {
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
         //Retrieve score data from FireStore database
-        scoreList = mutableListOf<Score>()
+        scoreList = ArrayList()
 
         db!!.collection("scores").get()
             .addOnSuccessListener { queryDocumentSnapshots ->
@@ -66,21 +67,10 @@ class ScoreActivity : AppCompatActivity() {
 
                     }
                 }
+
+                Toast.makeText(this@ScoreActivity, scoreList!!.size.toString(), Toast.LENGTH_LONG).show()
+
             }
-
-
-//        //TODO for testing only
-//        val currentScoreList = scoreList!!.toList()
-//        var scoreString = ""
-//
-//        Toast.makeText(this@ScoreActivity, currentScoreList.size.toString(), Toast.LENGTH_LONG).show()
-//
-//        for(i in 0 until currentScoreList.size){
-//            scoreString += currentScoreList[i].quizScore.toString() + ", "
-//        }
-//
-//        Toast.makeText(this@ScoreActivity, scoreString, Toast.LENGTH_LONG).show()
-
 
     }
 

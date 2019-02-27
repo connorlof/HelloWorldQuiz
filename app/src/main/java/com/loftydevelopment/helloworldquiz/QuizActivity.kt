@@ -155,15 +155,10 @@ class QuizActivity : AppCompatActivity() {
                 //Save score only if logged in for now
                 if(mAuth!!.currentUser != null){
 
-//                    val df = SimpleDateFormat("MM.dd.yyyy")
-//                    val date = df.format(Calendar.getInstance().time)
                     val date = Date()
 
                     var dbScores: CollectionReference = db!!.collection("scores")
-
-                    val time = FieldValue.serverTimestamp()
-
-                    //var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
+                    
                     var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, "exampleDisplay", date, score)
 
                     dbScores.add(scoreToSave)

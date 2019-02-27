@@ -18,4 +18,6 @@ class Score {
         this.date = date
         this.quizScore = quizScore
     }
+
+
 }
