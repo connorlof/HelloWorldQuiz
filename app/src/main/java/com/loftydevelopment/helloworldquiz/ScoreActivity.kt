@@ -1,25 +1,25 @@
 package com.loftydevelopment.helloworldquiz
 
 import android.support.design.widget.TabLayout
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_score.*
-import kotlinx.android.synthetic.main.fragment_score.view.*
 
 class ScoreActivity : AppCompatActivity() {
+
+    private var db: FirebaseFirestore? = null
+    private var scoreList: MutableList<Score>? = null
 
     /**
      * The [android.support.v4.view.PagerAdapter] that will provide
@@ -35,6 +35,8 @@ class ScoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
 
+        db = FirebaseFirestore.getInstance()
+
         setSupportActionBar(toolbar)
 
         // Create the adapter that will return a fragment for each of the three
@@ -47,30 +49,40 @@ class ScoreActivity : AppCompatActivity() {
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
-    }
+        //Retrieve score data from FireStore database
+        scoreList = mutableListOf<Score>()
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.menu_score, menu)
-//        return true
-//    }
+        db!!.collection("scores").get()
+            .addOnSuccessListener { queryDocumentSnapshots ->
+
+                if (!queryDocumentSnapshots.isEmpty) {
+
+                    val list = queryDocumentSnapshots.documents
+
+                    for (d in list) {
+
+                        val s = d.toObject(Score::class.java)
+                        scoreList!!.add(s!!)
+
+                    }
+                }
+            }
+
+
+//        //TODO for testing only
+//        val currentScoreList = scoreList!!.toList()
+//        var scoreString = ""
 //
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        val id = item.itemId
+//        Toast.makeText(this@ScoreActivity, currentScoreList.size.toString(), Toast.LENGTH_LONG).show()
 //
-//        if (id == R.id.action_settings) {
-//            return true
+//        for(i in 0 until currentScoreList.size){
+//            scoreString += currentScoreList[i].quizScore.toString() + ", "
 //        }
 //
-//        return super.onOptionsItemSelected(item)
-//    }
+//        Toast.makeText(this@ScoreActivity, scoreString, Toast.LENGTH_LONG).show()
+
+
+    }
 
 
     /**

@@ -13,14 +13,27 @@
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight=".5"
                 android:orientation="vertical" >
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="TextView1" android:id="@+id/textView_name"/>
+                    android:text="#" android:id="@+id/textView_rank"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="username" android:id="@+id/textView_name"/>
         </LinearLayout>
 
         <LinearLayout
@@ -33,20 +46,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="TextView2" android:id="@+id/textView_score"/>
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="TextView3" android:id="@+id/textView_rank"/>
+                    android:text="99" android:id="@+id/textView_score"
+                    android:textAlignment="viewEnd"
+            />
         </LinearLayout>
     </LinearLayout>
 

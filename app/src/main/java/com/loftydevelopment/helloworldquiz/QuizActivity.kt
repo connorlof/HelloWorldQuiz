@@ -9,10 +9,14 @@ import android.os.CountDownTimer
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.ImageView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
-
+import java.text.SimpleDateFormat
 
 
 class QuizActivity : AppCompatActivity() {
@@ -26,17 +30,20 @@ class QuizActivity : AppCompatActivity() {
 
     var sharedPref:SharedPreferences? = null
     var checked: Boolean? = null
-    var mImageView: ImageView? = null
     var panZoomView: PanZoomView? = null
 
     var mpCorrect:MediaPlayer? = null
     var mpWrong:MediaPlayer? = null
 
-
+    private var mAuth: FirebaseAuth? = null
+    private var db: FirebaseFirestore? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
+
+        mAuth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
 
         mpCorrect = MediaPlayer.create(this, R.raw.sound_correct)
         mpWrong = MediaPlayer.create(this, R.raw.sound_wrong)
@@ -45,7 +52,6 @@ class QuizActivity : AppCompatActivity() {
         checked = sharedPref!!.getBoolean("checked", false)
 
         panZoomView = findViewById(R.id.ivLanguageImg)
-
 
         play(findViewById(R.id.btAnswer0))
 
@@ -94,7 +100,6 @@ class QuizActivity : AppCompatActivity() {
 
         val img:Int = this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName)
         val uri = Uri.parse("android.resource://$packageName/drawable/$img")
-        //ivLanguageImg.setImageResource(this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName))
         ivLanguageImg.loadImageOnCanvas(uri)
 
         locationOfCorrectAnswer = rand.nextInt(4)
@@ -145,6 +150,31 @@ class QuizActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+
+                //TODO offline scoring functionality
+                //Save score only if logged in for now
+                if(mAuth!!.currentUser != null){
+
+//                    val df = SimpleDateFormat("MM.dd.yyyy")
+//                    val date = df.format(Calendar.getInstance().time)
+                    val date = Date()
+
+                    var dbScores: CollectionReference = db!!.collection("scores")
+
+                    val time = FieldValue.serverTimestamp()
+
+                    //var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
+                    var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, "exampleDisplay", date, score)
+
+                    dbScores.add(scoreToSave)
+                        .addOnSuccessListener { Toast.makeText(this@QuizActivity, "Score saved", Toast.LENGTH_LONG).show() }
+                        .addOnFailureListener { e -> Toast.makeText(this@QuizActivity, e.message, Toast.LENGTH_LONG).show() }
+
+                }else{
+                    Toast.makeText(this@QuizActivity, "Must be logged in to save score", Toast.LENGTH_LONG).show()
+                }
+
+
 
                 val intent = Intent(baseContext, EndQuizActivity::class.java)
                 intent.putExtra("score", score)
@@ -455,3 +485,5 @@ class QuizActivity : AppCompatActivity() {
     }
 
 }
+
+
