@@ -15,7 +15,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_score.*
-import java.util.ArrayList
+import java.util.*
 
 class ScoreActivity : AppCompatActivity() {
 
@@ -30,7 +30,10 @@ class ScoreActivity : AppCompatActivity() {
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
     private var db: FirebaseFirestore? = null
+
     private var scoreList: MutableList<Score>? = null
+    private var personalScoreList: MutableList<Score>? = null
+    private var weeklyScoreList: MutableList<Score>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,20 +41,12 @@ class ScoreActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
-
-        // Set up the ViewPager with the sections adapter.
-        container.adapter = mSectionsPagerAdapter
-
-        container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
-        tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
-
         db = FirebaseFirestore.getInstance()
 
         //Retrieve score data from FireStore database
         scoreList = ArrayList()
+        personalScoreList = ArrayList()
+        weeklyScoreList = ArrayList()
 
         db!!.collection("scores").get()
             .addOnSuccessListener { queryDocumentSnapshots ->
@@ -63,12 +58,30 @@ class ScoreActivity : AppCompatActivity() {
                     for (d in list) {
 
                         val s = d.toObject(Score::class.java)
+
                         scoreList!!.add(s!!)
+                        personalScoreList!!.add(s!!)
+                        weeklyScoreList!!.add(s!!)
 
                     }
+
+                    scoreList!!.add(Score("123", "allTimeEx", Date(), 101))
+                    personalScoreList!!.add(Score("123", "personalEx", Date(), 99))
+                    weeklyScoreList!!.add(Score("123", "weeklyEx", Date(), 100))
+
                 }
 
-                Toast.makeText(applicationContext, scoreList!!.size.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Loading scores...", Toast.LENGTH_SHORT).show()
+
+                // Create the adapter that will return a fragment for each of the three
+                // primary sections of the activity.
+                mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+
+                // Set up the ViewPager with the sections adapter.
+                container.adapter = mSectionsPagerAdapter
+
+                container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
+                tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
             }
 
@@ -102,11 +115,25 @@ class ScoreActivity : AppCompatActivity() {
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
+            var tabNum = arguments!!.getInt(ARG_SECTION_NUMBER)
+
             scoreActvity = activity as ScoreActivity?
 
             val rootView = inflater.inflate(R.layout.fragment_score, container, false)
             val lv = rootView.findViewById(R.id.section_list) as ListView
-            lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!)
+
+            if(tabNum != null){
+
+                when(tabNum){
+                    1 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
+                    2 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.weeklyScoreList!!) }
+                    3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!) }
+                    else -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
+                }
+
+            }else {
+                lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!)
+            }
 
             return rootView
         }
