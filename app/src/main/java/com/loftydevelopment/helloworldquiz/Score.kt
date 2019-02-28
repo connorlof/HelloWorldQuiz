@@ -3,7 +3,7 @@ package com.loftydevelopment.helloworldquiz
 import com.google.firebase.firestore.ServerTimestamp
 import java.util.*
 
-class Score {
+class Score : Comparable<Score>{
 
     var uid: String? = null
     var displayName: String? = null
@@ -19,5 +19,8 @@ class Score {
         this.quizScore = quizScore
     }
 
+    override fun compareTo(other: Score): Int {
+        return other.quizScore!! - this.quizScore!!
+    }
 
 }

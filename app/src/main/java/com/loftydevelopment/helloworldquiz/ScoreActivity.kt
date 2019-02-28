@@ -35,11 +35,17 @@ class ScoreActivity : AppCompatActivity() {
     private var personalScoreList: MutableList<Score>? = null
     private var weeklyScoreList: MutableList<Score>? = null
 
+    private var userUid = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
 
         setSupportActionBar(toolbar)
+
+        Toast.makeText(this, "Loading scores...", Toast.LENGTH_SHORT).show()
+
+        userUid = intent.getStringExtra("uid")
 
         db = FirebaseFirestore.getInstance()
 
@@ -60,18 +66,23 @@ class ScoreActivity : AppCompatActivity() {
                         val s = d.toObject(Score::class.java)
 
                         scoreList!!.add(s!!)
-                        personalScoreList!!.add(s!!)
-                        weeklyScoreList!!.add(s!!)
+
+                        if(s.uid == userUid){
+                            personalScoreList!!.add(s!!)
+                        }
+
+                        val currentDateBefore7Days = Calendar.getInstance()
+                        currentDateBefore7Days.add(Calendar.DATE, -7)
+
+                        if(!s.date!!.before(currentDateBefore7Days.time)){
+                            weeklyScoreList!!.add(s!!)
+                        }
 
                     }
 
-                    scoreList!!.add(Score("123", "allTimeEx", Date(), 101))
-                    personalScoreList!!.add(Score("123", "personalEx", Date(), 99))
-                    weeklyScoreList!!.add(Score("123", "weeklyEx", Date(), 100))
-
                 }
 
-                Toast.makeText(applicationContext, "Loading scores...", Toast.LENGTH_SHORT).show()
+                generateTop100Scores()
 
                 // Create the adapter that will return a fragment for each of the three
                 // primary sections of the activity.
@@ -87,6 +98,25 @@ class ScoreActivity : AppCompatActivity() {
 
     }
 
+    private fun generateTop100Scores(){
+
+        scoreList!!.sort()
+        personalScoreList!!.sort()
+        weeklyScoreList!!.sort()
+
+        if(scoreList!!.size > 100){
+            scoreList = (scoreList as ArrayList<Score>).subList(0, 100)
+        }
+
+        if(personalScoreList!!.size > 100){
+            personalScoreList = (personalScoreList as ArrayList<Score>).subList(0, 100)
+        }
+
+        if(weeklyScoreList!!.size > 100){
+            weeklyScoreList = (weeklyScoreList as ArrayList<Score>).subList(0, 100)
+        }
+
+    }
 
     /**
      * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -125,9 +155,9 @@ class ScoreActivity : AppCompatActivity() {
             if(tabNum != null){
 
                 when(tabNum){
-                    1 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
+                    1 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!) }
                     2 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.weeklyScoreList!!) }
-                    3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!) }
+                    3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
                     else -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
                 }
 

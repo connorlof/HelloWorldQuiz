@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
+    private var userUid = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +30,13 @@ class MainActivity : AppCompatActivity() {
         invalidateOptionsMenu()
 
         if(mAuth!!.currentUser != null){
+
             tvLoginStatus.text = "Logged In: Yes"
+            userUid = mAuth!!.currentUser!!.uid
+
         }else{
             tvLoginStatus.text = "Logged In: No"
+            userUid = "local"
         }
 
     }
@@ -45,8 +50,18 @@ class MainActivity : AppCompatActivity() {
 
     fun loadScores(view:View){
 
-        val scoreActivity = Intent(this, ScoreActivity::class.java)
-        startActivity(scoreActivity)
+        //TODO handle offline score logic
+        if(mAuth!!.currentUser != null){
+
+            val scoreActivity = Intent(this, ScoreActivity::class.java)
+            scoreActivity.putExtra("uid", userUid)
+            startActivity(scoreActivity)
+
+        }else{
+            Toast.makeText(this, "Must be logged in to view scores!", Toast.LENGTH_LONG).show()
+        }
+
+
 
     }
 
