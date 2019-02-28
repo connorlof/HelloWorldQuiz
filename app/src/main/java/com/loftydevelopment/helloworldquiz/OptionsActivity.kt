@@ -1,5 +1,6 @@
 package com.loftydevelopment.helloworldquiz
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -14,6 +15,11 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.main.activity_options.*
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseUser
+import android.net.NetworkInfo
+import android.net.ConnectivityManager
+import android.content.Context.CONNECTIVITY_SERVICE
+
+
 
 
 
@@ -26,6 +32,7 @@ class OptionsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_options)
 
         mAuth = FirebaseAuth.getInstance()
+
         val soundCheck = findViewById<CheckBox>(R.id.cbSound)
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = sharedPref.edit()
@@ -66,18 +73,28 @@ class OptionsActivity : AppCompatActivity() {
             return
         }
 
-        progressBarName.visibility = View.VISIBLE
+        if(isOnline()){
 
-        val user = mAuth!!.getCurrentUser()
+            progressBarName.visibility = View.VISIBLE
 
-        val profileUpdates = UserProfileChangeRequest.Builder()
-            .setDisplayName(display).build()
+            val user = mAuth!!.getCurrentUser()
 
-        user!!.updateProfile(profileUpdates)
+            val profileUpdates = UserProfileChangeRequest.Builder()
+                .setDisplayName(display).build()
 
-        progressBarName.visibility = View.GONE
+            user!!.updateProfile(profileUpdates)
 
-        Toast.makeText(this, "Display name successfully updated.", Toast.LENGTH_LONG).show()
+            progressBarName.visibility = View.GONE
+
+            Toast.makeText(this, "Display name successfully updated.", Toast.LENGTH_LONG).show()
+
+        }else{
+
+            Toast.makeText(this, "No network connection detected. Could not update.", Toast.LENGTH_LONG).show()
+
+        }
+
+
 
     }
 
@@ -103,34 +120,42 @@ class OptionsActivity : AppCompatActivity() {
                     return
                 }
 
-                progressBarPw.visibility = View.VISIBLE
+                if(isOnline()){
 
-                val user: FirebaseUser?
-                user = FirebaseAuth.getInstance().currentUser
-                val email = user!!.email
-                val credential = EmailAuthProvider.getCredential(email!!, oldPass)
+                    progressBarPw.visibility = View.VISIBLE
 
-                user.reauthenticate(credential).addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        user.updatePassword(newPass).addOnCompleteListener { task ->
+                    val user: FirebaseUser?
+                    user = FirebaseAuth.getInstance().currentUser
+                    val email = user!!.email
+                    val credential = EmailAuthProvider.getCredential(email!!, oldPass)
+
+                    user.reauthenticate(credential).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            user.updatePassword(newPass).addOnCompleteListener { task ->
+
+                                progressBarPw.visibility = View.GONE
+
+                                if (!task.isSuccessful) {
+                                    //Failed
+                                    Toast.makeText(this, "Something went wrong. Please try again later..", Toast.LENGTH_LONG).show()
+                                }else{
+                                    Toast.makeText(this, "Password successfully updated.", Toast.LENGTH_LONG).show()
+                                }
+                            }
+                        } else {
 
                             progressBarPw.visibility = View.GONE
 
-                            if (!task.isSuccessful) {
-                                //Failed
-                                Toast.makeText(this, "Something went wrong. Please try again later..", Toast.LENGTH_LONG).show()
-                            }else{
-                                Toast.makeText(this, "Password successfully updated.", Toast.LENGTH_LONG).show()
-                            }
+                            //Failed
+                            etOldPw.setError("Authentication Failed")
+                            etOldPw.requestFocus()
                         }
-                    } else {
-
-                        progressBarPw.visibility = View.GONE
-
-                        //Failed
-                        etOldPw.setError("Authentication Failed")
-                        etOldPw.requestFocus()
                     }
+
+                }else{
+
+                    Toast.makeText(this, "No network connection detected. Could not update.", Toast.LENGTH_LONG).show()
+
                 }
 
             }
@@ -145,4 +170,18 @@ class OptionsActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
 
     }
+
+    private fun isOnline(): Boolean {
+
+        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val netInfo = cm.activeNetworkInfo
+
+        if (netInfo != null && netInfo.isConnected) {
+            return true
+        }
+
+        return false
+
+    }
+
 }
