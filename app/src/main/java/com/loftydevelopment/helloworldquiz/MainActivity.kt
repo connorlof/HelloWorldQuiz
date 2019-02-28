@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         if(mAuth!!.currentUser != null){
 
-            tvLoginStatus.text = "Logged In: Yes"
+            tvLoginStatus.text = "Welcome back, " + mAuth!!.currentUser!!.displayName
             userUid = mAuth!!.currentUser!!.uid
 
         }else{
-            tvLoginStatus.text = "Logged In: No"
+            tvLoginStatus.text = "Welcome back, sign in to track your scores!"
             userUid = "local"
         }
 

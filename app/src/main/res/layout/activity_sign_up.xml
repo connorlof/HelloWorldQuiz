@@ -53,7 +53,7 @@
             app:layout_constraintStart_toEndOf="@+id/btSignUp" android:visibility="gone"/>
 
     <TextView
-            android:text="Already have an account? Log In Here"
+            android:text="Already have an account? Sign In Here"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"

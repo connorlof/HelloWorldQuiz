@@ -8,26 +8,38 @@
         tools:context=".MainActivity" android:background="@drawable/background_light_blue">
 
 
-    <android.support.v7.widget.Toolbar android:layout_width="match_parent" android:layout_height="wrap_content">
+    <android.support.v7.widget.Toolbar android:layout_width="match_parent" android:layout_height="wrap_content"
+                                       android:id="@+id/toolbar2">
         android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
     </android.support.v7.widget.Toolbar>
 
+
+    <ImageView
+            android:layout_width="330dp"
+            android:layout_height="220dp" app:srcCompat="@drawable/menu_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+            app:layout_constraintHorizontal_bias="0.493"/>
+
     <Button
             android:text="Start Quiz"
-            android:layout_height="wrap_content" android:id="@+id/btStartQuiz" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" android:id="@+id/btStartQuiz"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:onClick="startQuiz" android:layout_width="200dp"
+            android:layout_marginStart="8dp"
+            android:onClick="startQuiz" android:layout_width="225dp"
 
-    />
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:textSize="24sp"/>
     <Button
             android:text="Top Scores"
             android:layout_height="wrap_content" android:id="@+id/btScoreMenu" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/btStartQuiz" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:layout_width="200dp" android:onClick="loadScores"/>
+            android:layout_marginStart="8dp" android:layout_width="225dp" android:onClick="loadScores"
+            android:textSize="24sp"/>
     <TextView
             android:text="Logged In: No"
             android:layout_width="wrap_content"

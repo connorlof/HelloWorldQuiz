@@ -9,6 +9,10 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.FirebaseUser
+
+
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -62,6 +66,19 @@ class SignUpActivity : AppCompatActivity() {
 
         mAuth!!.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
+
+                if(mAuth!!.currentUser != null){
+
+                    var splitEmail = email.split("@")
+
+                    val user = mAuth!!.getCurrentUser()
+
+                    val profileUpdates = UserProfileChangeRequest.Builder()
+                        .setDisplayName(splitEmail[0]).build()
+
+                    user!!.updateProfile(profileUpdates)
+
+                }
 
                 progressBar.visibility = View.GONE
 

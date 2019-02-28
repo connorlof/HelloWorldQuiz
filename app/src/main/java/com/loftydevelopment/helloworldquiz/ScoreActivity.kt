@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_score.*
+import kotlinx.android.synthetic.main.fragment_score.*
 import java.util.*
 
 class ScoreActivity : AppCompatActivity() {

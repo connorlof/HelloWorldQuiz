@@ -33,6 +33,7 @@ class EndQuizActivity : AppCompatActivity() {
 
     }
 
+
     override fun onBackPressed() {
 
         val menuActivity = Intent(this, MainActivity::class.java)

@@ -7,7 +7,7 @@
     />
 
     <item
-            android:title="Login"
+            android:title="Sign In"
             android:id="@+id/menuLogin"
     />
 

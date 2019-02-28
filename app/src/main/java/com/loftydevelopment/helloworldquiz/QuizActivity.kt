@@ -38,6 +38,8 @@ class QuizActivity : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
     private var db: FirebaseFirestore? = null
 
+    private var timer: CountDownTimer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
@@ -96,8 +98,6 @@ class QuizActivity : AppCompatActivity() {
 
         lastQuestion = languageList[questionIndex].name
 
-        tvTestMath.text = languageList[questionIndex].name   //TODO old, using just for testing to see correct answer
-
         val img:Int = this.getResources().getIdentifier(languageList[questionIndex].imgFileName, "drawable", packageName)
         val uri = Uri.parse("android.resource://$packageName/drawable/$img")
         ivLanguageImg.loadImageOnCanvas(uri)
@@ -144,7 +144,7 @@ class QuizActivity : AppCompatActivity() {
 
         generateQuestion()
 
-        val timer = object: CountDownTimer(60100, 1000) {
+        timer = object: CountDownTimer(60100, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tvTimer.text = (millisUntilFinished / 1000).toString() + "s"
             }
@@ -159,7 +159,7 @@ class QuizActivity : AppCompatActivity() {
 
                     var dbScores: CollectionReference = db!!.collection("scores")
 
-                    var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, "exampleDisplay", date, score)
+                    var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
 
                     dbScores.add(scoreToSave)
                         .addOnSuccessListener { Toast.makeText(this@QuizActivity, "Score saved", Toast.LENGTH_LONG).show() }
@@ -169,8 +169,6 @@ class QuizActivity : AppCompatActivity() {
                     Toast.makeText(this@QuizActivity, "Must be logged in to save score", Toast.LENGTH_LONG).show()
                 }
 
-
-
                 val intent = Intent(baseContext, EndQuizActivity::class.java)
                 intent.putExtra("score", score)
                 startActivity(intent)
@@ -178,7 +176,17 @@ class QuizActivity : AppCompatActivity() {
             }
         }
 
-        timer.start()
+        timer!!.start()
+    }
+
+    override fun onBackPressed() {
+
+        timer!!.cancel()
+
+        val menuActivity = Intent(this, MainActivity::class.java)
+        startActivity(menuActivity)
+        finish()
+
     }
 
     fun initLanguageObjs():ArrayList<Language>{
