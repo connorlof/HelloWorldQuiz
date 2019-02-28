@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class ListAdapter(context: Context, arrayList: ArrayList<String>) : BaseAdapter() {
-    internal var sList = ArrayList<String>()
+class ListAdapter(context: Context, arrayList: List<Score>) : BaseAdapter() {
+    internal val sList: List<Score>
     private val mInflator: LayoutInflater
 
     init {
@@ -40,9 +40,12 @@ class ListAdapter(context: Context, arrayList: ArrayList<String>) : BaseAdapter(
             vh = view.tag as ListRowHolder
         }
 
-        vh.label_name.text = sList[position]
-        vh.label_place.text = sList[position]
-        vh.label_score.text = sList[position]
+        vh.label_name.text = sList[position].displayName
+        vh.label_place.text = (position + 1).toString()
+        vh.label_score.text = sList[position].quizScore.toString()
+
+        this.notifyDataSetChanged()
+
         return view
     }
 }

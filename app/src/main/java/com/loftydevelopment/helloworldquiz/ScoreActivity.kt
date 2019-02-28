@@ -19,9 +19,6 @@ import java.util.ArrayList
 
 class ScoreActivity : AppCompatActivity() {
 
-    private var db: FirebaseFirestore? = null
-    private var scoreList: MutableList<Score>? = null
-
     /**
      * The [android.support.v4.view.PagerAdapter] that will provide
      * fragments for each of the sections. We use a
@@ -32,11 +29,12 @@ class ScoreActivity : AppCompatActivity() {
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
+    private var db: FirebaseFirestore? = null
+    private var scoreList: MutableList<Score>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
-
-        db = FirebaseFirestore.getInstance()
 
         setSupportActionBar(toolbar)
 
@@ -49,6 +47,8 @@ class ScoreActivity : AppCompatActivity() {
 
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
+
+        db = FirebaseFirestore.getInstance()
 
         //Retrieve score data from FireStore database
         scoreList = ArrayList()
@@ -68,7 +68,7 @@ class ScoreActivity : AppCompatActivity() {
                     }
                 }
 
-                Toast.makeText(this@ScoreActivity, scoreList!!.size.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, scoreList!!.size.toString(), Toast.LENGTH_LONG).show()
 
             }
 
@@ -98,21 +98,16 @@ class ScoreActivity : AppCompatActivity() {
      */
     class PlaceholderFragment : Fragment() {
 
-        private val array = arrayListOf<String>()
+        var scoreActvity: ScoreActivity? = null
 
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            array.clear()
-            for (i in 0..10) {
-                array.add(getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER)))
-            }
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+            scoreActvity = activity as ScoreActivity?
+
             val rootView = inflater.inflate(R.layout.fragment_score, container, false)
             val lv = rootView.findViewById(R.id.section_list) as ListView
-            lv.adapter = ListAdapter(context!!, array)
+            lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!)
 
-            //rootView.section_label.text = getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER))
             return rootView
         }
 

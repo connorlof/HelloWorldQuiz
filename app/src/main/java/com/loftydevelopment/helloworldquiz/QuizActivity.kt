@@ -158,7 +158,7 @@ class QuizActivity : AppCompatActivity() {
                     val date = Date()
 
                     var dbScores: CollectionReference = db!!.collection("scores")
-                    
+
                     var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, "exampleDisplay", date, score)
 
                     dbScores.add(scoreToSave)
