@@ -12,11 +12,9 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_quiz.*
 import java.util.*
-import java.text.SimpleDateFormat
 
 
 class QuizActivity : AppCompatActivity() {
@@ -53,7 +51,6 @@ class QuizActivity : AppCompatActivity() {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         checked = sharedPref!!.getBoolean("checked", false)
 
-        panZoomView = findViewById(R.id.ivLanguageImg)
 
         play(findViewById(R.id.btAnswer0))
 

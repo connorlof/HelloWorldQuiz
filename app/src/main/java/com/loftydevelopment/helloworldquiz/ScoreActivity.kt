@@ -1,21 +1,18 @@
 package com.loftydevelopment.helloworldquiz
 
+import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v7.app.AppCompatActivity
-
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
-
 import kotlinx.android.synthetic.main.activity_score.*
-import kotlinx.android.synthetic.main.fragment_score.*
 import java.util.*
 
 class ScoreActivity : AppCompatActivity() {
@@ -41,8 +38,6 @@ class ScoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
-
-        setSupportActionBar(toolbar)
 
         Toast.makeText(this, "Loading scores...", Toast.LENGTH_SHORT).show()
 
