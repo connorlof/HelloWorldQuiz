@@ -51,9 +51,9 @@ class ListAdapter(context: Context, arrayList: List<Score>) : BaseAdapter() {
 }
 
 private class ListRowHolder(row: View?) {
-    public val label_name: TextView
-    public val label_place: TextView
-    public val label_score: TextView
+    val label_name: TextView
+    val label_place: TextView
+    val label_score: TextView
 
     init {
         this.label_name = row?.findViewById(R.id.textView_name) as TextView
