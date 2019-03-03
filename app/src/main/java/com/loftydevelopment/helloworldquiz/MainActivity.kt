@@ -51,15 +51,15 @@ class MainActivity : AppCompatActivity() {
     fun loadScores(view:View){
 
         //TODO handle offline score logic
-        if(mAuth!!.currentUser != null){
+//        if(mAuth!!.currentUser != null){
 
             val scoreActivity = Intent(this, ScoreActivity::class.java)
             scoreActivity.putExtra("uid", userUid)
             startActivity(scoreActivity)
 
-        }else{
-            Toast.makeText(this, "Must be logged in to view scores!", Toast.LENGTH_LONG).show()
-        }
+//        }else{
+//            Toast.makeText(this, "Must be logged in to view scores!", Toast.LENGTH_LONG).show()
+//        }
 
 
 

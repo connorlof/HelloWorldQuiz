@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_score.*
 import java.util.*
@@ -136,7 +137,7 @@ class ScoreActivity : AppCompatActivity() {
      * A placeholder fragment containing a simple view.
      */
     class PlaceholderFragment : Fragment() {
-
+        private var mAuth = FirebaseAuth.getInstance()
         var scoreActvity: ScoreActivity? = null
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -151,7 +152,11 @@ class ScoreActivity : AppCompatActivity() {
             if(tabNum != null){
 
                 when(tabNum){
-                    1 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!) }
+                    1 -> {
+                        if(mAuth!!.currentUser != null){
+                            lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!)
+                        }
+                    }
                     2 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.weeklyScoreList!!) }
                     3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
                     else -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
