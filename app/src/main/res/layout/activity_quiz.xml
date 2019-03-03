@@ -38,9 +38,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/ivLanguageImg" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvTimer" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/tvResult"/>
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/ivLanguageImg" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimer"
+            app:layout_constraintBottom_toTopOf="@+id/tvResult" android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"/>
     <Button
             android:text="Button"
             android:layout_width="0dp"

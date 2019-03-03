@@ -165,6 +165,6 @@ class PanZoomView(context: Context, attrs: AttributeSet?) : View(context, attrs)
     companion object {
         private var INVALID_POINTER_ID = -1
         private var minScale = 1.0f
-        private var maxScale = 5.0f
+        private var maxScale = 2.0f
     }
 }
