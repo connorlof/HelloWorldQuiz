@@ -7,17 +7,19 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_options.*
-
 
 class OptionsActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
+    private var db: FirebaseFirestore? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +64,13 @@ class OptionsActivity : AppCompatActivity() {
             return
         }
 
+        val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+        inputManager!!.hideSoftInputFromWindow(
+            currentFocus!!.windowToken,
+            InputMethodManager.HIDE_NOT_ALWAYS
+        )
+
         if(isOnline()){
 
             progressBarName.visibility = View.VISIBLE
@@ -73,9 +82,31 @@ class OptionsActivity : AppCompatActivity() {
 
             user!!.updateProfile(profileUpdates)
 
-            progressBarName.visibility = View.GONE
+            //Update all scores related to the user
+            db = FirebaseFirestore.getInstance()
+            db!!.collection("scores").get().addOnSuccessListener { queryDocumentSnapshots ->
 
-            Toast.makeText(this, "Display name successfully updated.", Toast.LENGTH_LONG).show()
+                progressBarName.visibility = View.GONE
+
+                if (!queryDocumentSnapshots.isEmpty) {
+
+                    val list = queryDocumentSnapshots.documents
+
+                    for (d in list) {
+
+                        val s = d.toObject(Score::class.java)
+
+                        if(s!!.uid == user!!.uid){
+                            db!!.collection("scores").document(d.id).update("displayName", display)
+                        }
+
+                    }
+
+                }
+
+                Toast.makeText(this, "Display name successfully updated.", Toast.LENGTH_LONG).show()
+
+            }
 
         }else{
 
@@ -108,6 +139,13 @@ class OptionsActivity : AppCompatActivity() {
                     etNewPw2.requestFocus()
                     return
                 }
+
+                val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+                inputManager!!.hideSoftInputFromWindow(
+                    currentFocus!!.windowToken,
+                    InputMethodManager.HIDE_NOT_ALWAYS
+                )
 
                 if(isOnline()){
 

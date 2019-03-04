@@ -105,14 +105,20 @@ class QuizActivity : AppCompatActivity() {
 
         answers.clear()
 
-        for(index in 0..4){
+        for(index in 0..3){
 
             if(index == locationOfCorrectAnswer){
                 answers.add(languageList[questionIndex].name)
             }else{
                 incorrectAnswer = languageList[rand.nextInt(languageList.size)].name
 
+                //Ensure no choice is the same language as the correct answer
                 while(incorrectAnswer.equals(languageList[questionIndex].name)){
+                    incorrectAnswer = languageList[rand.nextInt(languageList.size)].name
+                }
+
+                //Ensure all possible answers are unique
+                while(isDuplicateAnswer(index, incorrectAnswer)){
                     incorrectAnswer = languageList[rand.nextInt(languageList.size)].name
                 }
 
@@ -126,6 +132,29 @@ class QuizActivity : AppCompatActivity() {
         btAnswer2.text = answers[2]
         btAnswer3.text = answers[3]
 
+    }
+
+    private fun isDuplicateAnswer(index: Int, newAnswer: String) : Boolean {
+
+        when (index) {
+            1 -> {
+                while (newAnswer == answers[0]){
+                    return true
+                }
+            }
+            2 -> {
+                while (newAnswer == answers[0] || newAnswer == answers[1]){
+                    return true
+                }
+            }
+            3 -> {
+                while (newAnswer == answers[0] || newAnswer == answers[1] || newAnswer == answers[2]){
+                    return true
+                }
+            }
+        }
+
+        return false
     }
 
     private fun play(view: View){
