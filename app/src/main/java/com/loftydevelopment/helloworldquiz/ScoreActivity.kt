@@ -154,16 +154,17 @@ class ScoreActivity : AppCompatActivity() {
                 when(tabNum){
                     1 -> {
                         if(mAuth!!.currentUser != null){
-                            lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!)
+                            lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!, 1)
+                        }else{
+                            var offlinePlaceHolderList: MutableList<Score> = ArrayList()
+                            offlinePlaceHolderList.add(Score("", "Must be logged in to track scores.", Date(), -1))
+                            lv.adapter = ListAdapter(context!!, offlinePlaceHolderList, 1)
                         }
                     }
-                    2 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.weeklyScoreList!!) }
-                    3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
-                    else -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!) }
+                    2 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.weeklyScoreList!!, 2) }
+                    3 -> { lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!, 3) }
                 }
 
-            }else {
-                lv.adapter = ListAdapter(context!!, scoreActvity!!.scoreList!!)
             }
 
             return rootView

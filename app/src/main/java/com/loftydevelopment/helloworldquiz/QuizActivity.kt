@@ -159,11 +159,11 @@ class QuizActivity : AppCompatActivity() {
                     var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
 
                     dbScores.add(scoreToSave)
-                        .addOnSuccessListener { Toast.makeText(this@QuizActivity, "Score saved", Toast.LENGTH_LONG).show() }
-                        .addOnFailureListener { e -> Toast.makeText(this@QuizActivity, e.message, Toast.LENGTH_LONG).show() }
+                        .addOnSuccessListener { }
+                        .addOnFailureListener { e -> Toast.makeText(this@QuizActivity, "Error occurred. Score not saved.", Toast.LENGTH_LONG).show() }
 
                 }else{
-                    Toast.makeText(this@QuizActivity, "Must be logged in to save score", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@QuizActivity, "Must be logged in to save score.", Toast.LENGTH_LONG).show()
                 }
 
                 val intent = Intent(baseContext, EndQuizActivity::class.java)
@@ -487,3 +487,4 @@ class QuizActivity : AppCompatActivity() {
 }
 
 
+class Language (val name:String, val imgFileName:String, val priority:Int)

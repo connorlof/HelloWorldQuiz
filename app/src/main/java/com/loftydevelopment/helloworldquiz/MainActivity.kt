@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -50,18 +49,9 @@ class MainActivity : AppCompatActivity() {
 
     fun loadScores(view:View){
 
-        //TODO handle offline score logic
-//        if(mAuth!!.currentUser != null){
-
             val scoreActivity = Intent(this, ScoreActivity::class.java)
             scoreActivity.putExtra("uid", userUid)
             startActivity(scoreActivity)
-
-//        }else{
-//            Toast.makeText(this, "Must be logged in to view scores!", Toast.LENGTH_LONG).show()
-//        }
-
-
 
     }
 
@@ -101,7 +91,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, SignUpActivity::class.java))
             }
             R.id.menuLogout -> {
-                Toast.makeText(this, "Logout selected", Toast.LENGTH_SHORT).show()
                 FirebaseAuth.getInstance().signOut()
                 finish()
                 startActivity(Intent(this, MainActivity::class.java))
