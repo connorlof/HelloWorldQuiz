@@ -148,7 +148,8 @@ class QuizActivity : AppCompatActivity() {
 
             override fun onFinish() {
 
-                //TODO offline scoring functionality
+                var weeklyRank = ""
+
                 //Save score only if logged in for now
                 if(mAuth!!.currentUser != null){
 
@@ -156,7 +157,7 @@ class QuizActivity : AppCompatActivity() {
 
                     var dbScores: CollectionReference = db!!.collection("scores")
 
-                    var scoreToSave: Score = Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
+                    var scoreToSave= Score(mAuth!!.currentUser!!.uid, mAuth!!.currentUser!!.displayName!!, date, score)
 
                     dbScores.add(scoreToSave)
                         .addOnSuccessListener { }
@@ -164,6 +165,7 @@ class QuizActivity : AppCompatActivity() {
 
                 }else{
                     Toast.makeText(this@QuizActivity, "Must be logged in to save score.", Toast.LENGTH_LONG).show()
+                    weeklyRank = "Log in to track your scores!"
                 }
 
                 val intent = Intent(baseContext, EndQuizActivity::class.java)
@@ -485,6 +487,5 @@ class QuizActivity : AppCompatActivity() {
     }
 
 }
-
 
 class Language (val name:String, val imgFileName:String, val priority:Int)
