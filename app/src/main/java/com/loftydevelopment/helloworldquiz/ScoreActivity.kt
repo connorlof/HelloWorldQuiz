@@ -154,7 +154,13 @@ class ScoreActivity : AppCompatActivity() {
                 when(tabNum){
                     1 -> {
                         if(mAuth!!.currentUser != null){
-                            lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!, 1)
+                            if(scoreActvity!!.personalScoreList!!.size == 0){
+                                var noScorePlaceHolderList: MutableList<Score> = ArrayList()
+                                noScorePlaceHolderList.add(Score("", "No scores to display.", Date(), -1))
+                                lv.adapter = ListAdapter(context!!, noScorePlaceHolderList, 1)
+                            }else {
+                                lv.adapter = ListAdapter(context!!, scoreActvity!!.personalScoreList!!, 1)
+                            }
                         }else{
                             var offlinePlaceHolderList: MutableList<Score> = ArrayList()
                             offlinePlaceHolderList.add(Score("", "Must be logged in to track scores.", Date(), -1))
