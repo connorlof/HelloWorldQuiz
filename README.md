@@ -16,7 +16,7 @@ This project was started as a way to learn the Kotlin programming language throu
 
 ## Installation
 
-Hello World Quiz can be downloaded and installed through the [Google Play Store](https://play.google.com/store). To build this app from the source code see this [tutorial](https://www.londonappdeveloper.com/how-to-clone-a-github-project-on-android-studio/) for details. Specific build instructions for Hello World Quiz are currently being written.
+Hello World Quiz can be downloaded and installed through the [Google Play Store](https://play.google.com/store/apps/details?id=com.loftydevelopment.helloworldquiz). To build this app from the source code see this [tutorial](https://www.londonappdeveloper.com/how-to-clone-a-github-project-on-android-studio/) for details. Specific build instructions for Hello World Quiz are currently being written.
 
 ## Authors
 
