@@ -20,11 +20,11 @@ Hello World Quiz can be downloaded and installed through the [Google Play Store]
 
 ## Authors
 
-{Connor Loftus}(https://github.com/connorlof) and [Kyle McHenry](https://github.com/kmchenry1513)
+[Connor Loftus](https://github.com/connorlof) and [Kyle McHenry](https://github.com/kmchenry1513)
 
 ## License
 
-MIT License
+[MIT License](https://choosealicense.com/licenses/mit/)
 
 	Copyright (c) 2019 Connor Loftus
 
@@ -45,9 +45,6 @@ MIT License
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
 
 ## Acknowledgments
 
