@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -22,8 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        MobileAds.initialize(this, "ca-app-pub-9610580369831416~8140375328")
-
     }
 
     override fun onStart() {
@@ -31,16 +28,21 @@ class MainActivity : AppCompatActivity() {
 
         invalidateOptionsMenu()
 
+
         if(mAuth!!.currentUser != null){
 
-            tvLoginStatus.text = "Welcome back, " + mAuth!!.currentUser!!.displayName
+            if(mAuth!!.currentUser!!.displayName == null){
+                tvLoginStatus.text = "Welcome!"
+            }else{
+                tvLoginStatus.text = "Welcome back, " + mAuth!!.currentUser!!.displayName
+            }
+
             userUid = mAuth!!.currentUser!!.uid
 
         }else{
             tvLoginStatus.text = "Welcome back, sign in to track your scores!"
             userUid = "local"
         }
-
     }
 
     fun startQuiz(view:View){

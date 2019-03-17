@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_end_quiz.*
-import com.google.android.gms.ads.AdRequest
 
 
 class EndQuizActivity : AppCompatActivity() {
@@ -18,9 +17,6 @@ class EndQuizActivity : AppCompatActivity() {
         val score = bundle.getInt("score")
 
         tvEndScore.text = "Final Score: " + score
-
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
 
     }
 
