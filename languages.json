@@ -1,0 +1,1397 @@
+[
+  {
+    "name": "4DOS Batch",
+    "imgFileName": "_4dos_batch",
+    "priority": 1
+  },
+  {
+    "name": "4GL",
+    "imgFileName": "_4gl",
+    "priority": 1
+  },
+  {
+    "name": "4Test",
+    "imgFileName": "_4test",
+    "priority": 1
+  },
+  {
+    "name": "A+",
+    "imgFileName": "a_plus",
+    "priority": 1
+  },
+  {
+    "name": "Aassembler-6502",
+    "imgFileName": "aassembler_6502",
+    "priority": 1
+  },
+  {
+    "name": "Abap - SAP AG",
+    "imgFileName": "abap_sap_ag",
+    "priority": 1
+  },
+  {
+    "name": "ABC",
+    "imgFileName": "abc",
+    "priority": 1
+  },
+  {
+    "name": "ActionScript 3",
+    "imgFileName": "actionscript_3",
+    "priority": 1
+  },
+  {
+    "name": "ActionScript",
+    "imgFileName": "actionscript",
+    "priority": 1
+  },
+  {
+    "name": "Ada",
+    "imgFileName": "ada",
+    "priority": 1
+  },
+  {
+    "name": "Adobe Flex MXML",
+    "imgFileName": "adobe_flex_mxml",
+    "priority": 1
+  },
+  {
+    "name": "Algol 60",
+    "imgFileName": "algol_60",
+    "priority": 1
+  },
+  {
+    "name": "Algol 68",
+    "imgFileName": "algol_68",
+    "priority": 1
+  },
+  {
+    "name": "Alma-0",
+    "imgFileName": "alma_0",
+    "priority": 1
+  },
+  {
+    "name": "AmigaE",
+    "imgFileName": "amigae",
+    "priority": 1
+  },
+  {
+    "name": "AMX NetLinx",
+    "imgFileName": "amx_netlinx",
+    "priority": 1
+  },
+  {
+    "name": "Apl",
+    "imgFileName": "apl",
+    "priority": 1
+  },
+  {
+    "name": "AppleScript",
+    "imgFileName": "applescript",
+    "priority": 1
+  },
+  {
+    "name": "Ascii",
+    "imgFileName": "ascii",
+    "priority": 1
+  },
+  {
+    "name": "ASP.NET",
+    "imgFileName": "asp_net",
+    "priority": 2
+  },
+  {
+    "name": "ASP",
+    "imgFileName": "asp",
+    "priority": 1
+  },
+  {
+    "name": "AspectJ",
+    "imgFileName": "aspectj",
+    "priority": 1
+  },
+  {
+    "name": "Assembler - Intel x86; Dos; Tasm",
+    "imgFileName": "assembler_intel_x86_dos_tasm",
+    "priority": 1
+  },
+  {
+    "name": "Assembler - Intel x86; Linux",
+    "imgFileName": "assembler_intel_x86_linux",
+    "priority": 1
+  },
+  {
+    "name": "Assembler 68000",
+    "imgFileName": "assembler_68000",
+    "priority": 1
+  },
+  {
+    "name": "AutoHotkey",
+    "imgFileName": "autohotkey",
+    "priority": 1
+  },
+  {
+    "name": "Autoit",
+    "imgFileName": "autoit",
+    "priority": 1
+  },
+  {
+    "name": "Avenue - Scripting language for ArcView GIS",
+    "imgFileName": "avenue",
+    "priority": 1
+  },
+  {
+    "name": "AviSynth",
+    "imgFileName": "avisynth",
+    "priority": 1
+  },
+  {
+    "name": "Awk",
+    "imgFileName": "awk",
+    "priority": 1
+  },
+  {
+    "name": "B",
+    "imgFileName": "b",
+    "priority": 1
+  },
+  {
+    "name": "Baan Tools",
+    "imgFileName": "baan_tools",
+    "priority": 1
+  },
+  {
+    "name": "Ball",
+    "imgFileName": "ball",
+    "priority": 1
+  },
+  {
+    "name": "Bash",
+    "imgFileName": "bash",
+    "priority": 2
+  },
+  {
+    "name": "Basic - StarOffice OpenOffice",
+    "imgFileName": "basic_staroffice_openoffice",
+    "priority": 1
+  },
+  {
+    "name": "Basic",
+    "imgFileName": "basic",
+    "priority": 1
+  },
+  {
+    "name": "bc",
+    "imgFileName": "bc",
+    "priority": 1
+  },
+  {
+    "name": "Bcpl",
+    "imgFileName": "bcpl",
+    "priority": 1
+  },
+  {
+    "name": "Beta",
+    "imgFileName": "beta",
+    "priority": 1
+  },
+  {
+    "name": "BITGGAL AgileDog",
+    "imgFileName": "bitggal_agiledog",
+    "priority": 1
+  },
+  {
+    "name": "BITGGAL Jihwaja",
+    "imgFileName": "bitggal_jihwaja",
+    "priority": 1
+  },
+  {
+    "name": "Bliss",
+    "imgFileName": "bliss",
+    "priority": 1
+  },
+  {
+    "name": "BlitzBasic",
+    "imgFileName": "blitzbasic",
+    "priority": 1
+  },
+  {
+    "name": "Boo",
+    "imgFileName": "boo",
+    "priority": 1
+  },
+  {
+    "name": "Burning Sand 2",
+    "imgFileName": "burning_sand_2",
+    "priority": 1
+  },
+  {
+    "name": "C#",
+    "imgFileName": "c_sharp",
+    "priority": 2
+  },
+  {
+    "name": "C",
+    "imgFileName": "c",
+    "priority": 2
+  },
+  {
+    "name": "C++",
+    "imgFileName": "c_plusplus",
+    "priority": 2
+  },
+  {
+    "name": "Cache Server Pages (CSP)",
+    "imgFileName": "csp",
+    "priority": 1
+  },
+  {
+    "name": "Caml light",
+    "imgFileName": "caml_light",
+    "priority": 1
+  },
+  {
+    "name": "CCL",
+    "imgFileName": "ccl",
+    "priority": 1
+  },
+  {
+    "name": "Ceylon",
+    "imgFileName": "ceylon",
+    "priority": 1
+  },
+  {
+    "name": "Ch",
+    "imgFileName": "ch",
+    "priority": 1
+  },
+  {
+    "name": "Chapel",
+    "imgFileName": "chapel",
+    "priority": 1
+  },
+  {
+    "name": "CHILL",
+    "imgFileName": "chill",
+    "priority": 1
+  },
+  {
+    "name": "Chrome",
+    "imgFileName": "chrome",
+    "priority": 1
+  },
+  {
+    "name": "Chuck",
+    "imgFileName": "chuck",
+    "priority": 1
+  },
+  {
+    "name": "Cil",
+    "imgFileName": "cil",
+    "priority": 1
+  },
+  {
+    "name": "Clarion",
+    "imgFileName": "clarion",
+    "priority": 1
+  },
+  {
+    "name": "Clean",
+    "imgFileName": "clean",
+    "priority": 1
+  },
+  {
+    "name": "Clipper",
+    "imgFileName": "clipper",
+    "priority": 1
+  },
+  {
+    "name": "Clist",
+    "imgFileName": "clist",
+    "priority": 1
+  },
+  {
+    "name": "Clu",
+    "imgFileName": "clu",
+    "priority": 1
+  },
+  {
+    "name": "Cobol",
+    "imgFileName": "cobol",
+    "priority": 2
+  },
+  {
+    "name": "ColdFusion",
+    "imgFileName": "coldfusion",
+    "priority": 1
+  },
+  {
+    "name": "Comal",
+    "imgFileName": "comal",
+    "priority": 1
+  },
+  {
+    "name": "Common Lisp",
+    "imgFileName": "common_lisp",
+    "priority": 2
+  },
+  {
+    "name": "ConTeXt",
+    "imgFileName": "context",
+    "priority": 1
+  },
+  {
+    "name": "Crystal",
+    "imgFileName": "crystal",
+    "priority": 2
+  },
+  {
+    "name": "Curl",
+    "imgFileName": "curl",
+    "priority": 1
+  },
+  {
+    "name": "D",
+    "imgFileName": "d",
+    "priority": 1
+  },
+  {
+    "name": "D++",
+    "imgFileName": "d_plusplus",
+    "priority": 1
+  },
+  {
+    "name": "DarkBasic",
+    "imgFileName": "darkbasic",
+    "priority": 1
+  },
+  {
+    "name": "Dart",
+    "imgFileName": "dart",
+    "priority": 2
+  },
+  {
+    "name": "Dataflex",
+    "imgFileName": "dataflex",
+    "priority": 1
+  },
+  {
+    "name": "dBase",
+    "imgFileName": "dbase",
+    "priority": 1
+  },
+  {
+    "name": "Dcl batch",
+    "imgFileName": "dcl_batch",
+    "priority": 1
+  },
+  {
+    "name": "Delphi; Kylix",
+    "imgFileName": "delphi_kylix",
+    "priority": 1
+  },
+  {
+    "name": "DIV",
+    "imgFileName": "div",
+    "priority": 1
+  },
+  {
+    "name": "Doll",
+    "imgFileName": "doll",
+    "priority": 1
+  },
+  {
+    "name": "Dream Maker",
+    "imgFileName": "dream_maker",
+    "priority": 1
+  },
+  {
+    "name": "Dylan",
+    "imgFileName": "dylan",
+    "priority": 1
+  },
+  {
+    "name": "EAS 0.0.1.X",
+    "imgFileName": "eas",
+    "priority": 1
+  },
+  {
+    "name": "Ed and Ex",
+    "imgFileName": "edex",
+    "priority": 1
+  },
+  {
+    "name": "Eiffel",
+    "imgFileName": "eiffel",
+    "priority": 1
+  },
+  {
+    "name": "Elan",
+    "imgFileName": "elan",
+    "priority": 1
+  },
+  {
+    "name": "Elixir",
+    "imgFileName": "elixir",
+    "priority": 2
+  },
+  {
+    "name": "Elm",
+    "imgFileName": "elm",
+    "priority": 1
+  },
+  {
+    "name": "Erlang",
+    "imgFileName": "erlang",
+    "priority": 1
+  },
+  {
+    "name": "Euphoria",
+    "imgFileName": "euphoria",
+    "priority": 1
+  },
+  {
+    "name": "F#",
+    "imgFileName": "f_sharp",
+    "priority": 2
+  },
+  {
+    "name": "Factor",
+    "imgFileName": "factor",
+    "priority": 1
+  },
+  {
+    "name": "Ferite",
+    "imgFileName": "ferite",
+    "priority": 1
+  },
+  {
+    "name": "filePro",
+    "imgFileName": "file_pro",
+    "priority": 1
+  },
+  {
+    "name": "Fjolnir",
+    "imgFileName": "fjolnir",
+    "priority": 1
+  },
+  {
+    "name": "Focal",
+    "imgFileName": "focal",
+    "priority": 1
+  },
+  {
+    "name": "Focus",
+    "imgFileName": "focus",
+    "priority": 1
+  },
+  {
+    "name": "Forth",
+    "imgFileName": "forth",
+    "priority": 1
+  },
+  {
+    "name": "Fortran",
+    "imgFileName": "fortran",
+    "priority": 2
+  },
+  {
+    "name": "FreeBasic",
+    "imgFileName": "free_basic",
+    "priority": 1
+  },
+  {
+    "name": "Fril",
+    "imgFileName": "fril",
+    "priority": 1
+  },
+  {
+    "name": "Frink",
+    "imgFileName": "frink",
+    "priority": 1
+  },
+  {
+    "name": "Gambas",
+    "imgFileName": "gambas",
+    "priority": 1
+  },
+  {
+    "name": "Game Maker",
+    "imgFileName": "game_maker",
+    "priority": 1
+  },
+  {
+    "name": "GEMBase 4GL",
+    "imgFileName": "gembase_4gl",
+    "priority": 1
+  },
+  {
+    "name": "Go Language",
+    "imgFileName": "go_lang",
+    "priority": 2
+  },
+  {
+    "name": "GraalScript 1",
+    "imgFileName": "graalscript_1",
+    "priority": 1
+  },
+  {
+    "name": "GraalScript 2",
+    "imgFileName": "graalscript_2",
+    "priority": 1
+  },
+  {
+    "name": "Groovy",
+    "imgFileName": "groovy",
+    "priority": 2
+  },
+  {
+    "name": "Hack",
+    "imgFileName": "hack",
+    "priority": 1
+  },
+  {
+    "name": "Haskell",
+    "imgFileName": "haskell",
+    "priority": 2
+  },
+  {
+    "name": "haXe",
+    "imgFileName": "haxe",
+    "priority": 1
+  },
+  {
+    "name": "Heron",
+    "imgFileName": "heron",
+    "priority": 1
+  },
+  {
+    "name": "HLA (High Level Assembly)",
+    "imgFileName": "hla",
+    "priority": 1
+  },
+  {
+    "name": "HP 33s",
+    "imgFileName": "hp_33s",
+    "priority": 1
+  },
+  {
+    "name": "HP-41; HP-42S",
+    "imgFileName": "hp_41_42s",
+    "priority": 1
+  },
+  {
+    "name": "HTML",
+    "imgFileName": "html",
+    "priority": 2
+  },
+  {
+    "name": "HyperTalk",
+    "imgFileName": "hyper_talk",
+    "priority": 1
+  },
+  {
+    "name": "Icon",
+    "imgFileName": "icon",
+    "priority": 1
+  },
+  {
+    "name": "IDL",
+    "imgFileName": "idl",
+    "priority": 1
+  },
+  {
+    "name": "Inform 5-6",
+    "imgFileName": "inform_5_6",
+    "priority": 1
+  },
+  {
+    "name": "Inform 7",
+    "imgFileName": "inform_7",
+    "priority": 1
+  },
+  {
+    "name": "Io",
+    "imgFileName": "io",
+    "priority": 1
+  },
+  {
+    "name": "Iptscrae",
+    "imgFileName": "iptscrae",
+    "priority": 1
+  },
+  {
+    "name": "J",
+    "imgFileName": "j",
+    "priority": 1
+  },
+  {
+    "name": "Jal",
+    "imgFileName": "jal",
+    "priority": 1
+  },
+  {
+    "name": "Java",
+    "imgFileName": "java",
+    "priority": 2
+  },
+  {
+    "name": "JavaScript",
+    "imgFileName": "javascript",
+    "priority": 2
+  },
+  {
+    "name": "Joy",
+    "imgFileName": "joy",
+    "priority": 1
+  },
+  {
+    "name": "JSP",
+    "imgFileName": "jsp",
+    "priority": 1
+  },
+  {
+    "name": "Julia",
+    "imgFileName": "julia",
+    "priority": 1
+  },
+  {
+    "name": "K",
+    "imgFileName": "k",
+    "priority": 1
+  },
+  {
+    "name": "Kogut",
+    "imgFileName": "kogut",
+    "priority": 1
+  },
+  {
+    "name": "Kotlin",
+    "imgFileName": "kotlin",
+    "priority": 2
+  },
+  {
+    "name": "KPL - Kids Programming Language",
+    "imgFileName": "kpl",
+    "priority": 1
+  },
+  {
+    "name": "Lasso",
+    "imgFileName": "lasso",
+    "priority": 1
+  },
+  {
+    "name": "LaTeX",
+    "imgFileName": "latex",
+    "priority": 1
+  },
+  {
+    "name": "Liberty BASIC",
+    "imgFileName": "liberty_basic",
+    "priority": 1
+  },
+  {
+    "name": "Limbo",
+    "imgFileName": "limbo",
+    "priority": 1
+  },
+  {
+    "name": "Linden Scripting Language",
+    "imgFileName": "linden",
+    "priority": 1
+  },
+  {
+    "name": "Lingo (Macromedia Director scripting language)",
+    "imgFileName": "lingo",
+    "priority": 1
+  },
+  {
+    "name": "Linotte",
+    "imgFileName": "linotte",
+    "priority": 1
+  },
+  {
+    "name": "Lisaac",
+    "imgFileName": "lisaac",
+    "priority": 1
+  },
+  {
+    "name": "Lua",
+    "imgFileName": "lua",
+    "priority": 2
+  },
+  {
+    "name": "LuaPSP",
+    "imgFileName": "luapsp",
+    "priority": 1
+  },
+  {
+    "name": "M (MUMPS)",
+    "imgFileName": "m_mumps",
+    "priority": 1
+  },
+  {
+    "name": "M4",
+    "imgFileName": "m4",
+    "priority": 1
+  },
+  {
+    "name": "Macsyma; Maxima",
+    "imgFileName": "macsyma_maxima",
+    "priority": 1
+  },
+  {
+    "name": "Maple",
+    "imgFileName": "maple",
+    "priority": 1
+  },
+  {
+    "name": "Mathematica",
+    "imgFileName": "mathematica",
+    "priority": 1
+  },
+  {
+    "name": "Matlab",
+    "imgFileName": "matlab",
+    "priority": 2
+  },
+  {
+    "name": "Maude",
+    "imgFileName": "maude",
+    "priority": 1
+  },
+  {
+    "name": "Max",
+    "imgFileName": "max",
+    "priority": 1
+  },
+  {
+    "name": "Maya Embedded Language",
+    "imgFileName": "maya _embedded_language",
+    "priority": 1
+  },
+  {
+    "name": "mlrc Script",
+    "imgFileName": "mlrc_script",
+    "priority": 1
+  },
+  {
+    "name": "Model 204",
+    "imgFileName": "model_204",
+    "priority": 1
+  },
+  {
+    "name": "Modula-2",
+    "imgFileName": "modula_2",
+    "priority": 1
+  },
+  {
+    "name": "Moo",
+    "imgFileName": "moo",
+    "priority": 1
+  },
+  {
+    "name": "Mouse",
+    "imgFileName": "mouse",
+    "priority": 1
+  },
+  {
+    "name": "Ms-Dos batch",
+    "imgFileName": "ms_dos_batch",
+    "priority": 1
+  },
+  {
+    "name": "Muf",
+    "imgFileName": "muf",
+    "priority": 1
+  },
+  {
+    "name": "Natural",
+    "imgFileName": "natural",
+    "priority": 1
+  },
+  {
+    "name": "Nemerle",
+    "imgFileName": "nemerle",
+    "priority": 1
+  },
+  {
+    "name": "NewtonScript",
+    "imgFileName": "newton_script",
+    "priority": 1
+  },
+  {
+    "name": "Nice",
+    "imgFileName": "nice",
+    "priority": 1
+  },
+  {
+    "name": "NOMAD (4GL)",
+    "imgFileName": "nomad_4gl",
+    "priority": 1
+  },
+  {
+    "name": "NSIS",
+    "imgFileName": "nsis",
+    "priority": 1
+  },
+  {
+    "name": "Oberon",
+    "imgFileName": "oberon",
+    "priority": 1
+  },
+  {
+    "name": "OCaml",
+    "imgFileName": "ocaml",
+    "priority": 1
+  },
+  {
+    "name": "Occam",
+    "imgFileName": "occam",
+    "priority": 1
+  },
+  {
+    "name": "Octave",
+    "imgFileName": "octave",
+    "priority": 1
+  },
+  {
+    "name": "OPL",
+    "imgFileName": "opl",
+    "priority": 1
+  },
+  {
+    "name": "Ops5",
+    "imgFileName": "ops5",
+    "priority": 1
+  },
+  {
+    "name": "Ops83",
+    "imgFileName": "ops83",
+    "priority": 1
+  },
+  {
+    "name": "Oz",
+    "imgFileName": "oz",
+    "priority": 1
+  },
+  {
+    "name": "Parrot assembly language",
+    "imgFileName": "parrot",
+    "priority": 1
+  },
+  {
+    "name": "Parrot intermediate representation",
+    "imgFileName": "parrot_ir",
+    "priority": 1
+  },
+  {
+    "name": "Pascal",
+    "imgFileName": "pascal",
+    "priority": 2
+  },
+  {
+    "name": "PAWN",
+    "imgFileName": "pawn",
+    "priority": 1
+  },
+  {
+    "name": "PBasic",
+    "imgFileName": "pbasic",
+    "priority": 1
+  },
+  {
+    "name": "Perl 6",
+    "imgFileName": "perl_6",
+    "priority": 1
+  },
+  {
+    "name": "Perl",
+    "imgFileName": "perl",
+    "priority": 2
+  },
+  {
+    "name": "PHP",
+    "imgFileName": "php",
+    "priority": 2
+  },
+  {
+    "name": "Pike",
+    "imgFileName": "pike",
+    "priority": 1
+  },
+  {
+    "name": "Pilot",
+    "imgFileName": "pilot",
+    "priority": 1
+  },
+  {
+    "name": "PL/SQL",
+    "imgFileName": "pl_sql",
+    "priority": 1
+  },
+  {
+    "name": "Pl-I",
+    "imgFileName": "pl_i",
+    "priority": 1
+  },
+  {
+    "name": "Pop 11",
+    "imgFileName": "pop_11",
+    "priority": 1
+  },
+  {
+    "name": "PostScript",
+    "imgFileName": "postscript",
+    "priority": 1
+  },
+  {
+    "name": "Pov-Ray",
+    "imgFileName": "pov_ray",
+    "priority": 1
+  },
+  {
+    "name": "Processing",
+    "imgFileName": "processing",
+    "priority": 1
+  },
+  {
+    "name": "Profan",
+    "imgFileName": "profan",
+    "priority": 1
+  },
+  {
+    "name": "Progress",
+    "imgFileName": "progress",
+    "priority": 1
+  },
+  {
+    "name": "Prolog",
+    "imgFileName": "prolog",
+    "priority": 2
+  },
+  {
+    "name": "Protocol Buffers",
+    "imgFileName": "protocol_buffers",
+    "priority": 1
+  },
+  {
+    "name": "Pure Data",
+    "imgFileName": "pure_data",
+    "priority": 1
+  },
+  {
+    "name": "PureBasic",
+    "imgFileName": "pure_basic",
+    "priority": 1
+  },
+  {
+    "name": "Python",
+    "imgFileName": "python",
+    "priority": 1
+  },
+  {
+    "name": "QuakeC",
+    "imgFileName": "quakec",
+    "priority": 1
+  },
+  {
+    "name": "QuickBasic",
+    "imgFileName": "quick_basic",
+    "priority": 1
+  },
+  {
+    "name": "R",
+    "imgFileName": "r",
+    "priority": 2
+  },
+  {
+    "name": "Ratfor",
+    "imgFileName": "ratfor",
+    "priority": 1
+  },
+  {
+    "name": "RealBasic",
+    "imgFileName": "real_basic",
+    "priority": 1
+  },
+  {
+    "name": "Rebol",
+    "imgFileName": "rebol",
+    "priority": 1
+  },
+  {
+    "name": "Red",
+    "imgFileName": "red",
+    "priority": 1
+  },
+  {
+    "name": "Refal",
+    "imgFileName": "refal",
+    "priority": 1
+  },
+  {
+    "name": "Rexx",
+    "imgFileName": "rexx",
+    "priority": 1
+  },
+  {
+    "name": "Ring",
+    "imgFileName": "ring",
+    "priority": 1
+  },
+  {
+    "name": "Robotic (MegaZeux)",
+    "imgFileName": "robotic",
+    "priority": 1
+  },
+  {
+    "name": "Rpg Code",
+    "imgFileName": "rpg_code",
+    "priority": 1
+  },
+  {
+    "name": "RPG",
+    "imgFileName": "rpg",
+    "priority": 1
+  },
+  {
+    "name": "RPL (HP Calculators)",
+    "imgFileName": "rpl",
+    "priority": 1
+  },
+  {
+    "name": "Rsl",
+    "imgFileName": "rsl",
+    "priority": 1
+  },
+  {
+    "name": "RT Assembler",
+    "imgFileName": "rt_assembler",
+    "priority": 1
+  },
+  {
+    "name": "Rtf",
+    "imgFileName": "rtf",
+    "priority": 1
+  },
+  {
+    "name": "RTML",
+    "imgFileName": "rtml",
+    "priority": 1
+  },
+  {
+    "name": "Ruby",
+    "imgFileName": "ruby",
+    "priority": 2
+  },
+  {
+    "name": "Rust",
+    "imgFileName": "rust",
+    "priority": 2
+  },
+  {
+    "name": "S",
+    "imgFileName": "s",
+    "priority": 1
+  },
+  {
+    "name": "Sas",
+    "imgFileName": "sas",
+    "priority": 1
+  },
+  {
+    "name": "Sather",
+    "imgFileName": "sather",
+    "priority": 1
+  },
+  {
+    "name": "Scala",
+    "imgFileName": "scala",
+    "priority": 2
+  },
+  {
+    "name": "SCAR",
+    "imgFileName": "scar",
+    "priority": 1
+  },
+  {
+    "name": "Scheme",
+    "imgFileName": "scheme",
+    "priority": 2
+  },
+  {
+    "name": "Scriptol",
+    "imgFileName": "scriptol",
+    "priority": 1
+  },
+  {
+    "name": "sed",
+    "imgFileName": "sed",
+    "priority": 1
+  },
+  {
+    "name": "Seed7",
+    "imgFileName": "seed7",
+    "priority": 1
+  },
+  {
+    "name": "Self",
+    "imgFileName": "self",
+    "priority": 1
+  },
+  {
+    "name": "Setl",
+    "imgFileName": "setl",
+    "priority": 1
+  },
+  {
+    "name": "Simula",
+    "imgFileName": "simula",
+    "priority": 1
+  },
+  {
+    "name": "S-Lang",
+    "imgFileName": "s_lang",
+    "priority": 1
+  },
+  {
+    "name": "Smalltalk",
+    "imgFileName": "small_talk",
+    "priority": 2
+  },
+  {
+    "name": "Smil",
+    "imgFileName": "smil",
+    "priority": 1
+  },
+  {
+    "name": "Sml",
+    "imgFileName": "sml",
+    "priority": 1
+  },
+  {
+    "name": "Snobol",
+    "imgFileName": "snobol",
+    "priority": 1
+  },
+  {
+    "name": "Span",
+    "imgFileName": "span",
+    "priority": 1
+  },
+  {
+    "name": "Spitbol",
+    "imgFileName": "spitbol",
+    "priority": 1
+  },
+  {
+    "name": "SPSS Syntax",
+    "imgFileName": "spss_syntax",
+    "priority": 1
+  },
+  {
+    "name": "SQL",
+    "imgFileName": "sql",
+    "priority": 2
+  },
+  {
+    "name": "SSPL",
+    "imgFileName": "sspl",
+    "priority": 1
+  },
+  {
+    "name": "Starlet",
+    "imgFileName": "starlet",
+    "priority": 1
+  },
+  {
+    "name": "STATA",
+    "imgFileName": "stata",
+    "priority": 1
+  },
+  {
+    "name": "SuperCollider",
+    "imgFileName": "super_collider",
+    "priority": 1
+  },
+  {
+    "name": "Swift",
+    "imgFileName": "swift",
+    "priority": 2
+  },
+  {
+    "name": "T programming language",
+    "imgFileName": "t_lang",
+    "priority": 1
+  },
+  {
+    "name": "Tcl (Tool command language)",
+    "imgFileName": "tcl",
+    "priority": 1
+  },
+  {
+    "name": "Teco",
+    "imgFileName": "teco",
+    "priority": 1
+  },
+  {
+    "name": "Template Toolkit",
+    "imgFileName": "template_toolkit",
+    "priority": 1
+  },
+  {
+    "name": "TeX",
+    "imgFileName": "tex",
+    "priority": 1
+  },
+  {
+    "name": "TI-BASIC",
+    "imgFileName": "ti_basic",
+    "priority": 2
+  },
+  {
+    "name": "Tk",
+    "imgFileName": "tk",
+    "priority": 1
+  },
+  {
+    "name": "TOM (rewriting language)",
+    "imgFileName": "tom",
+    "priority": 1
+  },
+  {
+    "name": "TSQL",
+    "imgFileName": "tsql",
+    "priority": 1
+  },
+  {
+    "name": "TTCN-3",
+    "imgFileName": "ttcn_3",
+    "priority": 1
+  },
+  {
+    "name": "Turing",
+    "imgFileName": "turing",
+    "priority": 1
+  },
+  {
+    "name": "Ubercode",
+    "imgFileName": "ubercode",
+    "priority": 1
+  },
+  {
+    "name": "Uniface",
+    "imgFileName": "uniface",
+    "priority": 1
+  },
+  {
+    "name": "Unix shell",
+    "imgFileName": "unix_shell",
+    "priority": 1
+  },
+  {
+    "name": "UnrealScript",
+    "imgFileName": "unreal_script",
+    "priority": 1
+  },
+  {
+    "name": "VBA",
+    "imgFileName": "vba",
+    "priority": 2
+  },
+  {
+    "name": "Verilog",
+    "imgFileName": "verilog",
+    "priority": 1
+  },
+  {
+    "name": "VHDL",
+    "imgFileName": "vhdl",
+    "priority": 1
+  },
+  {
+    "name": "Visual Basic .Net 2003",
+    "imgFileName": "visual_basic_net_2003",
+    "priority": 1
+  },
+  {
+    "name": "Visual Basic .Net",
+    "imgFileName": "visual_basic_net",
+    "priority": 1
+  },
+  {
+    "name": "Visual Basic Script",
+    "imgFileName": "visual_basic_script",
+    "priority": 1
+  },
+  {
+    "name": "Visual Basic",
+    "imgFileName": "visual_basic",
+    "priority": 1
+  },
+  {
+    "name": "Visual DialogScript",
+    "imgFileName": "visual_dialogscript",
+    "priority": 1
+  },
+  {
+    "name": "Visual Prolog console program",
+    "imgFileName": "visual_prolog_console_program",
+    "priority": 1
+  },
+  {
+    "name": "Vmrl",
+    "imgFileName": "vmrl",
+    "priority": 1
+  },
+  {
+    "name": "Vms",
+    "imgFileName": "vms",
+    "priority": 1
+  },
+  {
+    "name": "Windows PowerShell",
+    "imgFileName": "windows_powershell",
+    "priority": 1
+  },
+  {
+    "name": "X++",
+    "imgFileName": "x_plusplus",
+    "priority": 1
+  },
+  {
+    "name": "XAML-WPF",
+    "imgFileName": "xaml_wpf",
+    "priority": 1
+  },
+  {
+    "name": "XL",
+    "imgFileName": "xl",
+    "priority": 1
+  },
+  {
+    "name": "Xml",
+    "imgFileName": "xml",
+    "priority": 2
+  },
+  {
+    "name": "XQuery",
+    "imgFileName": "x_query",
+    "priority": 1
+  },
+  {
+    "name": "XS programming language",
+    "imgFileName": "xs_lang",
+    "priority": 1
+  },
+  {
+    "name": "XSLT",
+    "imgFileName": "xslt",
+    "priority": 1
+  },
+  {
+    "name": "Yorick",
+    "imgFileName": "yorick",
+    "priority": 1
+  }
+]
