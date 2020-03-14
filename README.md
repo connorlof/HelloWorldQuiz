@@ -16,17 +16,17 @@ This project was started as a way to learn the Kotlin programming language throu
 
 ## Installation
 
-Hello World Quiz can be downloaded and installed through the [Google Play Store](https://play.google.com/store/apps/details?id=com.loftydevelopment.tank_mates). The iOS version of this app will be released soon.
+Hello World Quiz can be downloaded and installed through the [Google Play Store](https://play.google.com/store/apps/details?id=com.loftydevelopment.helloworldquiz). To build this app from the source code see this [tutorial](https://www.londonappdeveloper.com/how-to-clone-a-github-project-on-android-studio/) for details. Specific build instructions for Hello World Quiz are currently being written.
 
 ## Authors
 
-[Connor Loftus](https://github.com/connorlof)
+[Connor Loftus](https://github.com/connorlof) and [Kyle McHenry](https://github.com/kmchenry1513)
 
 ## License
 
 [MIT License](https://choosealicense.com/licenses/mit/)
 
-	Copyright (c) 2020 Connor Loftus
+	Copyright (c) 2019 Connor Loftus
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -46,3 +46,8 @@ Hello World Quiz can be downloaded and installed through the [Google Play Store]
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
 
+## Acknowledgments
+
+* [MYCPLUS](https://www.mycplus.com/featured-articles/hello-world-programs-in-300-programming-languages/) for compiling a list of "Hello World" snippets.
+* [Unsplash](https://unsplash.com/) for the images used within the application.
+* [North Border Tech Training - Youtube](https://www.youtube.com/playlist?list=PLpg_vSyqsFdod1QLjFbXzMaSJM7Fust8X) Tutorial followed for the pinching, zooming, and panning of a custom ImageView.
